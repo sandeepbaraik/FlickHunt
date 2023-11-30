@@ -1,0 +1,34 @@
+<!-- movie-list.component.html -->
+<div class="filters">
+    <input [(ngModel)]="searchQuery" placeholder="Search by title" (input)="filterMovies()" />
+    
+    <label>Filter by Year:</label>
+    <select [(ngModel)]="selectedYear" (change)="filterMovies()">
+      <option value="All">All</option>
+      <option *ngFor="let year of uniqueYears()" [value]="year">{{ year }}</option>
+    </select>
+  
+    <label>Filter by Language:</label>
+    <select [(ngModel)]="selectedLanguage" (change)="filterMovies()">
+      <option value="All">All</option>
+      <option *ngFor="let language of uniqueLanguages()" [value]="language">{{ language }}</option>
+    </select>
+  
+    <label>Filter by Genre:</label>
+    <select [(ngModel)]="selectedGenre" (change)="filterMovies()">
+      <option value="All">All</option>
+      <option *ngFor="let genre of uniqueGenres()" [value]="genre">{{ genre }}</option>
+    </select>
+  </div>
+  
+  <div class="movie-container">
+    <div class="movie-card" *ngFor="let movie of filteredMovies">
+      <img [src]="movie.posterUrl" alt="{{ movie.title }} Poster" />
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.description }}</p>
+      <p>Year: {{ movie.year }}</p>
+      <p>Language: {{ movie.language }}</p>
+      <p>Genre: {{ movie.genre.join(', ') }}</p>
+    </div>
+  </div>
+  

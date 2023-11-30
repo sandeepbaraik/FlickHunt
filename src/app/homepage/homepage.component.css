@@ -1,0 +1,46 @@
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .movie-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+
+  .movie-card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .filters {
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 5px;
+    margin-right: 10px;
+  }
+
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar img {
+    width: 50px;
+    height: auto;
+  }
